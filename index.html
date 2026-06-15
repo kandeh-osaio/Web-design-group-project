@@ -23,6 +23,8 @@
     <li><a href="#monitoring">Live Status</a></li>
     <li><a href="#alerts">Alerts</a></li>
     <li><a href="#report">Report</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <a href="#report" class="nav-cta">Report Flood</a>
@@ -320,6 +322,68 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div style="text-align:center;">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-text" style="margin: 0 auto;">
+      Find answers to common questions about SL FloodWatch and flood safety in Sierra Leone.
+    </p>
+  </div>
+  <div class="faq-container">
+    <details class="faq-item">
+      <summary>How often is the water level data updated?</summary>
+      <div class="faq-content">
+        Data is transmitted from our IoT sensors every 15 minutes to ensure real-time accuracy across all monitored zones.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>How do I receive emergency alerts?</summary>
+      <div class="faq-content">
+        Currently, alerts are broadcast on this dashboard. We are actively working on an SMS notification system for users in high-risk zones.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Who validates the community reports?</summary>
+      <div class="faq-content">
+        Our moderation team and local community leaders verify reports before they are broadcast as official alerts.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="text-align:center;">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-text" style="margin: 0 auto;">
+      Have questions or want to partner with us? Send us a message.
+    </p>
+  </div>
+  <div class="form-wrapper">
+    <div id="contactForm">
+      <div class="form-group">
+        <label for="contactName">Full Name</label>
+        <input type="text" id="contactName" placeholder="Your Name"/>
+      </div>
+      <div class="form-group">
+        <label for="contactEmail">Email Address</label>
+        <input type="email" id="contactEmail" placeholder="your.email@example.com"/>
+      </div>
+      <div class="form-group">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" placeholder="How can we help?"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitContact()">📩 Send Message</button>
+    </div>
+    <div class="form-success" id="contactSuccess">
+      ✅ Message sent! We'll get back to you shortly.
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="section-label">About SL FloodWatch</div>
@@ -404,6 +468,19 @@
     }
     document.getElementById('reportForm').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  function submitContact() {
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const msg = document.getElementById('contactMessage').value.trim();
+
+    if (!name || !email || !msg) {
+      alert('⚠️ Please fill in all required fields.');
+      return;
+    }
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('contactSuccess').style.display = 'block';
   }
 
   // Animate water bars on scroll

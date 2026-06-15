@@ -132,6 +132,14 @@ Provides emergency notifications and warnings.
 
 Allows citizens to submit flood incidents.
 
+#### FAQ
+
+Answers common questions about SL FloodWatch and flood safety.
+
+#### Contact
+
+A form to reach out to the team for questions or partnerships.
+
 #### About
 
 Explains the purpose and functionality of the system.
